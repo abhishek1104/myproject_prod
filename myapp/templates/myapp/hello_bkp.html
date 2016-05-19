@@ -1,0 +1,33 @@
+<html>
+   
+   <body>
+
+    Hello World!!!<p>Today is {{today}}</p>
+   
+    Today day is {{today.day}}th day!<br/>
+
+    {% if today.day == 1 %}
+    Today is 1st date.
+
+    {% elif today.day == 30 %}
+
+    Today is last date.
+
+    {% else %}
+
+    I don't know.
+
+    {% endif %}
+    <br/>
+    {{data | truncatewords:5}}
+    
+    <p>
+        Day of Weeks<br/>
+        {% for day in days_of_week %}
+        {{day}}
+    </p>
+    {% endfor %}
+
+    </body>
+   
+</html>

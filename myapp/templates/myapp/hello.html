@@ -1,0 +1,34 @@
+{% extends "myapp/main_template.html" %}
+
+{% block title %}
+    Hello World ! Today is {{today}}<br/>
+    Babaji Says {{data | truncatewords:4}}<br/>
+{% endblock %}
+
+{% block content %}
+    {% if today.weekday == 1 %}
+
+    Today is first date
+
+    {% elif today.weekday <= 5 %}
+
+    Today is weekday!<br/><br/>
+
+    {% else %}
+
+    Today is weekend.
+
+    {% endif %}
+
+    {% comment %}
+    The below will loop over the list of day_of_week list!
+    {% endcomment %}
+    <div>
+    Days in weeks are<br/>
+    {% for i in days_of_week %}
+    {{i}}<br/>
+    {% endfor %}
+    </div>
+
+
+{% endblock %}
